@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         "primary": "#1a1514",
       },
+      screens: {
+        "2md": "850px",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
