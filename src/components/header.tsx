@@ -15,7 +15,7 @@ interface HeaderProps {
 
 export default function Header({ logo, links }: HeaderProps) {
   return <>
-    <div className="flex h-16 gap-5 py-2 px-10 items-center bg-[#1a1514] sticky top-0">
+    <div className="flex h-16 gap-5 py-2 px-10 items-center bg-primary sticky top-0">
       <a href="." className="shrink-0">
         <Image src={logo} alt="logo" width={150} height={40} className="p-2" />
       </a>
