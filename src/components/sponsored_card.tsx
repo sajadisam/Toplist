@@ -15,6 +15,6 @@ export default function SponsoredServerCard({ logo, name, banner }: { logo: stri
         </div>
       </div>
     </div>
-    <video src={banner} autoPlay={true} loop={true} className="shrink-0 p-2 h-20 2md:w-auto w-full" />
+    <video src={banner} autoPlay={true} loop={true} className="shrink-0 p-2 h-18 2md:w-auto w-full" />
   </div>
 }
