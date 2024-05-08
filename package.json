@@ -13,6 +13,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@headlessui/react": "^2.0.3",
     "@popperjs/core": "^2.11.8",
     "@prisma/client": "^5.13.0",
     "bulma": "^1.0.0",
@@ -20,7 +21,7 @@
     "next-themes": "^0.3.0",
     "prisma": "^5.13.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
     "react-popper": "^2.3.0"
   },
   "devDependencies": {
