@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Header, { HeaderLink } from "./header";
+import Header, { HeaderLink } from "../components/header";
 import { faDollar, faLink, faUserFriends, faUserShield, faAward } from "@fortawesome/free-solid-svg-icons"
 import Body from "./body";
 
