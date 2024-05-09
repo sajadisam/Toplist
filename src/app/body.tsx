@@ -23,7 +23,7 @@ export default function Body() {
           </div>
           {
             (Array(10).fill(0)).map((_, index) => (
-              <ServerCard index={index + 1} name="Mythical" votes={5} players={120} tags={["RS2", "ECO"]} video="/banner.mp4" description="The CErver is an OSRS server that aims to create an enjoyable experience but wants to reward grinds as much as possible. We aim to create a fun, safe, and social community for players to enjoy and shape the server based on community feedback. Make your voice heard, join The CErver today!" />
+              <ServerCard key={index} index={index + 1} name="Mythical" votes={5} players={120} tags={["RS2", "ECO"]} video="/banner.mp4" description="The CErver is an OSRS server that aims to create an enjoyable experience but wants to reward grinds as much as possible. We aim to create a fun, safe, and social community for players to enjoy and shape the server based on community feedback. Make your voice heard, join The CErver today!" />
             ))
           }
         </div>

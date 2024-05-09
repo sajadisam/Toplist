@@ -32,8 +32,8 @@ export default function ServerCard({ index, name, tags, players, description, vi
         </div>
         <div className="flex gap-2 sm:ml-auto">
           {tags && tags.length > 0 &&
-            tags.map((tag) => (
-              <div className="px-5 py-2 bg-gray-800 bg-opacity-60 text-red-500 rounded-md text-sm font-medium">
+            tags.map((tag, index) => (
+              <div key={index} className="px-5 py-2 bg-gray-800 bg-opacity-60 text-red-500 rounded-md text-sm font-medium">
                 {tag}
               </div>
             ))
