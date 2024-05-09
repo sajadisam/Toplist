@@ -62,9 +62,9 @@ export default function ServerCard({ index, name, tags, players, description, vi
           }
           {
             players &&
-            <div className="flex gap-1.5 items-center">
+            <div className="2md:flex hidden gap-1.5 items-center">
               <div className="h-1.5 w-1.5 rounded-full bg-green-500" />
-              <h1 className="2md:block hidden text-sm text-center text-gray-600">{players} players online</h1>
+              <h1 className=" text-sm text-center text-gray-600">{players} players online</h1>
             </div>
           }
         </div>
