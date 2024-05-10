@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAward } from "@fortawesome/free-solid-svg-icons"
 
 export default function SponsoredServerCard({ logo, name, banner }: { logo: string, name: string, banner: string }) {
-  return <div className="flex items-center py-1  bg-black bg-opacity-15 border-white border-opacity-[5%] border-[1px] px-5 justify-between rounded-md hover:bg-white hover:bg-opacity-[2%]">
+  return <a className="flex items-center py-1  bg-black bg-opacity-15 border-white border-opacity-[5%] border-[1px] px-5 justify-between rounded-md hover:bg-white hover:bg-opacity-[2%] transition" href={`/servers/${name}`} >
     <div className="2md:flex hidden items-center gap-5 ">
       <div className="w-20 h-20 shrink-0 ">
         <img src={logo} alt={"server logo"} className="p-2" />
@@ -16,5 +16,5 @@ export default function SponsoredServerCard({ logo, name, banner }: { logo: stri
       </div>
     </div>
     <video src={banner} autoPlay={true} loop={true} className="shrink-0 p-2 h-18 2md:w-auto w-full" />
-  </div>
+  </a>
 }
