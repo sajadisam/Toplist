@@ -14,7 +14,7 @@ export interface ServerCardProps {
 
 export default function ServerCard({ index, name, tags, players, description, video, votes }: ServerCardProps) {
   return <>
-    <div className="bg-black bg-opacity-40 px-7 rounded-lg">
+    <a className="bg-black hover:bg-opacity-60 transition bg-opacity-40 px-7 rounded-lg" href={`/servers/${name}`}>
       <div className="flex flex-col items-start sm:items-center sm:flex-row my-5  gap-4">
         <div className="flex gap-4">
           <div className="px-4 py-2 bg-gray-800 rounded-md text-lg ">
@@ -25,7 +25,7 @@ export default function ServerCard({ index, name, tags, players, description, vi
               {name}
             </span>
             <div className="flex items-center gap-1">
-              <FontAwesomeIcon icon={faStar} color={"gray"} />
+              <FontAwesomeIcon icon={faStar} color={"gray"} width={15} />
               <span className="text-sm">5.0</span>
             </div>
           </div>
@@ -70,6 +70,6 @@ export default function ServerCard({ index, name, tags, players, description, vi
         </div>
       </div>
 
-    </div>
+    </a>
   </>;
 }
