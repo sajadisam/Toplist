@@ -1,5 +1,4 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
@@ -17,9 +16,9 @@ interface HeaderProps {
 
 export default function Header({ logo, links }: HeaderProps) {
   return <>
-    <div className="flex h-16 gap-5 py-2 px-10 items-center bg-primary sticky top-0">
-      <a href="." className="shrink-0">
-        <Image src={logo} alt="logo" width={150} height={40} className="p-2" />
+    <div className="flex h-16 gap-5 py-2 px-10 items-center bg-primary sticky top-0 z-50">
+      <a href="/" className="shrink-0">
+        <img src={logo} fetchPriority="high" alt="logo" width={150} height={40} className="p-2" />
       </a>
 
       <div className="2md:flex hidden w-full h-full">
@@ -33,10 +32,8 @@ export default function Header({ logo, links }: HeaderProps) {
 
       <div className="block 2md:hidden ml-auto">
         <Menu>
-          <MenuButton>
-            <button className="px-3 py-2">
-              <FontAwesomeIcon icon={faBars} />
-            </button>
+          <MenuButton className="px-3 py-2">
+            <FontAwesomeIcon icon={faBars} />
           </MenuButton>
 
           <MenuItems anchor={"bottom end"} className={"bg-zinc-800 py-2"}>
@@ -52,7 +49,6 @@ export default function Header({ logo, links }: HeaderProps) {
           </MenuItems>
         </Menu>
       </div>
-      {/* <button className="bg-red-400 bg-opacity-30 px-4 py-2 text-sm">Login</button> */}
     </div>
   </>;
 }
