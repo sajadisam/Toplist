@@ -1,3 +1,4 @@
+"use client";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -14,10 +15,10 @@ export default function ScoreChart({ scores }: ScoreCharProps) {
           (scores.map((score, index) => {
             let value = total > 0 ? Math.round((score / total) * 100) : 0;
             let percentage: string = value + "%";
-            return <tr>
+            return <tr key={index}>
               <td className="flex items-center relative my-0.5">
                 <span>{5 - index}</span>
-                <FontAwesomeIcon icon={faStar} className="mx-2" color={value > 0 ? "yellow" : "gray"} />
+                <FontAwesomeIcon icon={faStar} className="mx-2" color={value > 0 ? "yellow" : "gray"} width={20} height={20} />
               </td>
               <td className="w-full">
                 <div className="w-full relative">

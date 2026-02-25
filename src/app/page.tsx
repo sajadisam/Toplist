@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Header from "../components/header";
 import links from "@/data/links"
 import BodyWrapper from "@/components/body";
@@ -7,16 +6,22 @@ import Dropdown from "@/components/dropdown";
 import ServerCard from "@/components/server_card";
 import 'react-responsive-pagination/themes/classic.css';
 import Pagination from "@/components/pagination";
+import { get_max_pages, get_page } from "@/backend/servers";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Runesuite",
   description: "RSPS toplist",
   icons: {
     icon: "/favicon.png"
-  }
+  },
 };
 
-export default function Home() {
+export default async function Page({ searchParams }: { searchParams: { page?: string } }) {
+  const page = searchParams.page ? parseInt(searchParams.page) : 1;
+  const data = await get_page(page);
+  const max = await get_max_pages();
+
   return (
     <>
       <div className="pattern">
@@ -35,15 +40,20 @@ export default function Home() {
                 <Dropdown options={["Top Voted", "Highest Rated", "Most Reviewed", "Newest"]} />
               </div>
               {
-                (Array(10).fill(0)).map((_, index) => (
-                  <ServerCard key={index} index={index + 1} name="Mythical" votes={5} players={120} tags={["RS2", "ECO"]} video="/banner.mp4" description="The CErver is an OSRS server that aims to create an enjoyable experience but wants to reward grinds as much as possible. We aim to create a fun, safe, and social community for players to enjoy and shape the server based on community feedback. Make your voice heard, join The CErver today!" />
-                ))
+                (data.map((server, index) => (
+                  <ServerCard key={index} index={index + 1} name={server.name} logo={server.image} votes={server.vote_count} players={Math.round(server.vote_count / 12)} tags={["RS2", "ECO"]} video={server.banner} description={server.description} />
+                )))
               }
             </div>
-            <Pagination />
+            <Pagination currentPage={page} maxPages={max} setCurrentPage={async (page) => {
+              "use server";
+              redirect(`?page=${page}`);
+            }}
+            />
           </div>
         </BodyWrapper>
       </div>
     </>
+
   );
 }

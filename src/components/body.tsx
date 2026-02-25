@@ -1,3 +1,4 @@
+"use client";
 import { ReactNode, Children } from "react";
 
 export default function BodyWrapper({ children, className }: { children: ReactNode, className?: string }) {

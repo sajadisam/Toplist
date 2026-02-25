@@ -1,16 +1,19 @@
 "use client";
-
 import ResponsivePagination from 'react-responsive-pagination';
-import { useState } from "react";
 
-export default function Pagination() {
-  const [currentPage, setCurrentPage] = useState(8);
-  const totalPages = 5;
+interface PaginationProps {
+  currentPage: number,
+  maxPages: number,
+  setCurrentPage: (page: number) => void,
+}
+
+export default async function Pagination(props: PaginationProps) {
+
   return <>
     <ResponsivePagination
-      current={currentPage}
-      total={totalPages}
-      onPageChange={setCurrentPage}
+      current={props.currentPage}
+      total={props.maxPages}
+      onPageChange={props.setCurrentPage}
     />
   </>;
 

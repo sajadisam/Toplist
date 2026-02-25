@@ -1,3 +1,4 @@
+"use client";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReactNode } from "react";
@@ -20,7 +21,8 @@ export default function DataTable({ categories }: DataTableProps) {
           categories.filter((category) => category.value).map((category, index) => (
             <tr key={index} className="divide-x divide-neutral-800 ">
               <td className="group py-2.5 px-4 relative">
-                <FontAwesomeIcon icon={category.icon} className="z-0" />
+                {/* <FontAwesomeIcon icon={category.icon} className="z-0" width={20} height={20} /> */}
+                <FontAwesomeIcon icon={category.icon} className="z-0 w-5 h-5" />
                 <span className={"group-hover:inline select-none text-sm hidden absolute right-full top-1/2 -translate-y-1/2 text-nowrap m-auto bg-neutral-800 px-3 py-1.5  mr-2 rounded-lg "}>
                   {category.tooltip}
                 </span>

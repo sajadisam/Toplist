@@ -1,3 +1,4 @@
+"use client";
 import { faStar, faWarning } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -35,7 +36,7 @@ function ReviewLarge({ user, rating, description }: ReviewProps) {
         <div className="flex flex-col gap-2 px-2">
           <div className="flex gap-0.5">
             {(Array(5).fill(0).map((_, index) => (
-              <FontAwesomeIcon icon={faStar} className={`${index < rating ? "text-yellow-500" : "text-gray-700"}`} />
+              <FontAwesomeIcon key={index} icon={faStar} className={`${index < rating ? "text-yellow-500" : "text-gray-700"}`} width={20} height={20} />
             )))}
           </div>
           <p className="text-sm">{description}</p>
@@ -71,7 +72,7 @@ function ReviewSmall({ user, rating, description }: ReviewProps) {
               <button><FontAwesomeIcon icon={faWarning} className="text-red-600" width={30} height={30} /></button>
               <div className="flex gap-0.5">
                 {(Array(5).fill(0).map((_, index) => (
-                  <FontAwesomeIcon icon={faStar} className={`${index < rating ? "text-yellow-500" : "text-gray-700"}`} />
+                  <FontAwesomeIcon key={index} icon={faStar} className={`${index < rating ? "text-yellow-500" : "text-gray-700"}`} />
                 )))}
               </div>
             </div>
